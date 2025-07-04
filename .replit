@@ -1,0 +1,21 @@
+modules = ["python-3.12", "python-pip"]
+
+[nix]
+channel = "stable-24_05"
+packages = ["ffmpeg", "opus", "libopus", "freetype", "lcms2", "libimagequant", "libjpeg", "libsodium", "libtiff", "libwebp", "libxcrypt", "openjpeg", "tcl", "tk", "zlib"]
+
+[workflows]
+runButton = "Discord Bot"
+
+[[workflows.workflow]]
+name = "Discord Bot"
+author = 17760018
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python main.py"
+
+[[ports]]
+localPort = 8080
+externalPort = 80
